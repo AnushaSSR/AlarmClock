@@ -1,1 +1,54 @@
-Do
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> My Alarm Clock</title>
+    </head>
+    <body>
+        <!-- Element to display the current time -->
+        <div id="clock-face"></div>
+        <!-- Element to display the heading -->
+        <h1>Set Your Alarm</h1>
+        <!-- Form element to set the alarm -->
+        <form id="set-alarm-form">
+            <input
+                id="hour-val"
+                name="hour-val"
+                type="number"
+                min="00"
+                max="12"
+                placeholder="hh"
+                required
+            >
+            <span> :</span>
+            <input
+                id="min-val"
+                name="min-val"
+                type="number"
+                min="00"
+                max="59"
+                placeholder="mm"
+                required
+            >
+            <span> :</span>
+            <input
+                id="sec-val"
+                name="sec-val"
+                type="number"
+                min="00"
+                max="59"
+                placeholder="ss"
+                required
+            >
+            <select name="am-pm" id="am-pm" required>
+                <option value=""></option>
+                <option value="AM">AM</option>
+                <option value="PM">PM</option>
+            </select>
+            <button id="set-alarm" onclick="setAlarm()"> Set Alarm</button>
+        </form>
+
+        <p>Active Alarms</p>
+        <!-- Unordered list to display the terms -->
+        <ul id="alarms-list"></ul>
+    </body>
+</html>
