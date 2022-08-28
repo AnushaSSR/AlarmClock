@@ -50,7 +50,7 @@ function setAlarm() {
     }
     else {
         alarmsList.push(alarmSetValue);
-        // sortList(alarmsList);
+        sortList(alarmsList);
         populateAlarmList(alarmsList);
     }
 
@@ -85,3 +85,9 @@ function populateAlarmList(alarmsList) {
     }
 
 }
+
+
+function sortList(alarmsList) {
+    alarmsList.sort();
+}
+
