@@ -1,4 +1,4 @@
-//to dsiplay current time in the clock face
+let timeFormat;//to dsiplay current time in the clock face
 setInterval(() => {
     const date = new Date();
     const hourVal = date.getHours();
@@ -17,7 +17,7 @@ setInterval(() => {
     }
 
     //To get the time in the required format
-    const timeFormat = setDigit(hours) + ":" + setDigit(minutes) + ":" + setDigit(seconds) + " " + am_pm;
+    timeFormat = setDigit(hours) + ":" + setDigit(minutes) + ":" + setDigit(seconds) + " " + am_pm;
     const currentTime = document.getElementById("clock-face");
     currentTime.textContent = timeFormat;
 }, 1000);
@@ -90,7 +90,29 @@ function sortList(alarmsList){
     alarmsList.sort();
 
 }
+
+
 function deleteListElement(indexVal){
     alarmsList.splice(indexVal,1);
     populateAlarmList(alarmsList);
 };
+
+
+setInterval(() => {
+
+    const currentTime = timeFormat;
+    for(index=0;index<alarmsList.length;index++){
+        const alarmSetTime = alarmsList[index];
+
+        if(currentTime == alarmSetTime)
+        {
+            alert("alarm on ");
+            
+        }
+
+
+    }
+
+
+
+},100)
