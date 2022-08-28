@@ -72,9 +72,9 @@ function populateAlarmList(alarmsList) {
         alarmElement.innerHTML = element;
         deleteButton.innerText = "Delete";
 
-        // deleteButton.addEventListener('click', () => {
-        //     deleteListElement(indexVal);
-        // });
+        deleteButton.addEventListener('click', () => {
+            deleteListElement(indexVal);
+        });
 
         listElement.appendChild(alarmElement);
         listElement.appendChild(deleteButton);
@@ -86,8 +86,11 @@ function populateAlarmList(alarmsList) {
 
 }
 
-
-function sortList(alarmsList) {
+function sortList(alarmsList){
     alarmsList.sort();
-}
 
+}
+function deleteListElement(indexVal){
+    alarmsList.splice(indexVal,1);
+    populateAlarmList(alarmsList);
+};
