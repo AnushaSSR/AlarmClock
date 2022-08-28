@@ -2,19 +2,34 @@ let timeFormat;//to dsiplay current time in the clock face
 setInterval(() => {
     const date = new Date();
     const hourVal = date.getHours();
-    const hours = (date.getHours() < 12) ? date.getHours() : date.getHours() - 12;
-    const minutes = date.getMinutes();
-    const seconds = date.getSeconds();
+    let hours;
     let am_pm = " ";
 
 
-    //logic to handle the am,pm based on the time
-    if (hourVal > 12) {
+    if(hourVal >12)
+    {
+        hours = hourVal-12;
         am_pm = "PM";
+    
     }
-    else {
+    //special case to handle when hourVal is 00, we will consider it as 12A.M
+    else if(hourVal ==0)
+    {
+        hours=12;
         am_pm = "AM";
+    
+    
     }
+    else
+    {
+        hours=hourVal;
+        am_pm = "AM";
+    
+    }
+    // hours = (date.getHours() < 12) ? date.getHours() : date.getHours() - 12;
+    const minutes = date.getMinutes();
+    const seconds = date.getSeconds();
+
 
     //To get the time in the required format
     timeFormat = setDigit(hours) + ":" + setDigit(minutes) + ":" + setDigit(seconds) + " " + am_pm;
@@ -39,19 +54,21 @@ function setAlarm() {
     let minVal = document.getElementById('min-val');
     let secVal = document.getElementById('sec-val');
     let ampmVal = document.getElementById('am-pm');
+    console.log(`hour.val is, ${hourVal.value}`);
+    console.log(hourVal.value != "" && minVal.value != "" && secVal.value != "" && ampmVal.value != "");
+    console.log(hourVal.value != "" );
+   
+    if(hourVal.value != "" && minVal.value != "" && secVal.value != "" && ampmVal.value != ""){
+        let alarmSetValue = `${setDigit(hourVal.value)}:${setDigit(minVal.value)}:${setDigit(secVal.value)} ${ampmVal.value}`;
+        if (alarmsList.indexOf(alarmSetValue) > -1) {
+            alert("Alarm already set for the specified time");
+        }
+        else {
+            alarmsList.push(alarmSetValue);
+            sortList(alarmsList);
+            populateAlarmList(alarmsList);
+        }
 
-    let alarmSetValue = `${setDigit(hourVal.value)}:${setDigit(minVal.value)}:${setDigit(secVal.value)} ${ampmVal.value}`;
-
-
-
-    if (alarmsList.indexOf(alarmSetValue) > -1) {
-        alert("Alarm already set for the specified time");
-
-    }
-    else {
-        alarmsList.push(alarmSetValue);
-        sortList(alarmsList);
-        populateAlarmList(alarmsList);
     }
 
 }
@@ -68,7 +85,8 @@ function populateAlarmList(alarmsList) {
         let listElement = document.createElement('li');
         let deleteButton = document.createElement('button');
         let alarmElement = document.createElement('span');
-        deleteButton.classList.add('deleteListElement');
+        listElement.classList.add('list-element');
+        deleteButton.classList.add('delete-list-element');
         alarmElement.innerHTML = element;
         deleteButton.innerText = "Delete";
 
@@ -78,41 +96,29 @@ function populateAlarmList(alarmsList) {
 
         listElement.appendChild(alarmElement);
         listElement.appendChild(deleteButton);
-
-
         list.appendChild(listElement);
-
     }
-
 }
 
-function sortList(alarmsList){
+//sort the list of alarms
+function sortList(alarmsList) {
     alarmsList.sort();
-
 }
 
-
-function deleteListElement(indexVal){
-    alarmsList.splice(indexVal,1);
+// delete the alarm selected by the user
+function deleteListElement(indexVal) {
+    alarmsList.splice(indexVal, 1);
     populateAlarmList(alarmsList);
 };
 
-
+//to keep track of the set alarm times and alert the user
 setInterval(() => {
-
     const currentTime = timeFormat;
-    for(index=0;index<alarmsList.length;index++){
+    for (index = 0; index < alarmsList.length; index++) {
         const alarmSetTime = alarmsList[index];
-
-        if(currentTime == alarmSetTime)
-        {
+        if (currentTime == alarmSetTime) {
             alert("alarm on ");
-            
         }
-
-
     }
 
-
-
-},100)
+}, 10);

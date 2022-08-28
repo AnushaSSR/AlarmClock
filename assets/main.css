@@ -1,0 +1,62 @@
+body{
+    /* margin: 50px 350px 50px 350px; */
+    /* border: solid 3px #ff3300 ;
+    border-color: #ff3300; */
+    text-align: center;
+}
+#clock-face {
+    padding: 10px;
+color:#5ed3bf;
+font-weight: bold;
+font-size: 80px;
+
+}
+
+#list-div {
+    margin: 10px 130px;
+    text-align: center;
+
+}
+
+#list-div p {
+    margin-left: 300px;
+    text-align: left;
+
+}
+#alarms-list {
+    margin-left: 270px;
+    margin-bottom: 100px;
+    list-style: none;
+    align-content: left;
+    text-align: left;
+    float: left;
+}
+#alarms-list li span{
+    margin: 10 10 10 0;
+    width: 300px;
+
+}
+
+
+.list-element {
+    margin-bottom: 10px;
+
+}
+.list-element span{
+    color: #5ed3bf;
+    float: left;
+}
+
+
+.deleteListElement {
+    margin: 10px;
+    
+    text-align: right;
+}
+#hours-val,#mins-val,#secs-val {
+    text: #ff3300;
+}
+
+#set-alarm-form {
+    padding: 20px; 
+}

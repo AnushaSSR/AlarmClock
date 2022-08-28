@@ -2,9 +2,12 @@
 <html>
     <head>
         <title> My Alarm Clock</title>
-        <!-- <link rel="stylesheet" href="/assets/main.css"> -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./assets/main.css">
+        
     </head>
-<body>        <!-- Element to display the current time -->
+<body>  
+    <div id="content">      <!-- Element to display the current time -->
         <div id="clock-face"></div>
         <!-- Element to display the heading -->
         <h1>Set Your Alarm</h1>
@@ -17,6 +20,7 @@
                 min="00"
                 max="12"
                 placeholder="hh"
+                required
 
             >
             <span> :</span>
@@ -27,6 +31,7 @@
                 min="00"
                 max="59"
                 placeholder="mm"
+                required
             >
             <span> :</span>
             <input
@@ -36,8 +41,9 @@
                 min="00"
                 max="59"
                 placeholder="ss"
+                required
             >
-            <select name="am-pm" id="am-pm" >
+            <select name="am-pm" id="am-pm" required>
                 <option value=""></option>
                 <option value="AM">AM</option>
                 <option value="PM">PM</option>
@@ -45,10 +51,13 @@
             <button type="button" id="set-alarm" onclick="setAlarm()"> Set Alarm</button>
         </form>
 
+
+        <div id="list-div">
         <p>Alarms</p>
         <!-- Unordered list to display the terms -->
         <ul id="alarms-list"></ul>
-
+    </div>
+</div>
         <script type="text/javascript" src="main.js"></script>
     </body>
 </html>
