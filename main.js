@@ -70,6 +70,9 @@ function setAlarm() {
         }
 
     }
+    else {
+        alert("Please select hh:mm:ss am/pm to set the alarm");
+    }
 
 }
 
@@ -114,11 +117,9 @@ function deleteListElement(indexVal) {
 //to keep track of the set alarm times and alert the user
 setInterval(() => {
     const currentTime = timeFormat;
-    for (index = 0; index < alarmsList.length; index++) {
-        const alarmSetTime = alarmsList[index];
-        if (currentTime == alarmSetTime) {
+        if (alarmsList.indexOf(currentTime) > -1) {
+            
             alert("alarm on ");
         }
-    }
-
-}, 10);
+   
+}, 1000);
