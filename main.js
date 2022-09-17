@@ -21,7 +21,7 @@ setInterval(() => {
         am_pm = "AM";
     }
 
-    //To get the time in the required format
+    //To display the time in the required format
     timeFormat = setDigit(hours) + " : " + setDigit(minutes) + " : " + setDigit(seconds) + " " + am_pm;
     currentTime.textContent = timeFormat;
 }, 1000);
@@ -33,12 +33,13 @@ function setDigit(timeVal) {
     else { return "0" + timeVal; }
 }
 
-//Check the input values of hours,mins and seconds and set them to value if value enteredis greater than the max value
-//set to two digits if single is entered 
+//Check the input values of hours,mins and seconds and set them to a value if value entered is greater than the max value
+//set to two digits if single digit is entered 
 const hourIpCheck = document.getElementById('hour-val');
 const minIpCheck = document.getElementById('min-val');
 const secIpCheck = document.getElementById('sec-val');
 
+//Setting hour value to 12 if entered value is 0 or greater than 12 and set the digits to 2 uopn blur
 hourIpCheck.addEventListener('blur', () => {
     if (hourIpCheck.value != "") {
         hourIpCheck.value = setDigit(hourIpCheck.value);
@@ -47,18 +48,21 @@ hourIpCheck.addEventListener('blur', () => {
     } 
 });
 
+//Setting minute value to 00 if entered value is greater than 59 and set the digits to 2 upon blur
 minIpCheck.addEventListener('blur', () => {
     if (minIpCheck.value != "") {
         minIpCheck.value = setDigit(minIpCheck.value);
     } setMinSec(minIpCheck);
 });
 
+//Setting second value to 00 if entered value is greater than 59 and set the digits to 2 upon blur
 secIpCheck.addEventListener('blur', () => {
     if (secIpCheck.value != "") {
         secIpCheck.value = setDigit(secIpCheck.value);
     } setMinSec(secIpCheck);
 });
 
+//Method to set the minute and seconds values
 function setMinSec(valCheck) {
     if (Number(valCheck.value) > 59) {
         valCheck.value = "00";
@@ -66,23 +70,16 @@ function setMinSec(valCheck) {
 }
 
 
-//set the alarm, adds alarm to the list 
-
+//Set the alarm, adds alarm to the list 
 let alarmsList = [];
 function setAlarm() {
-
     let hourVal = document.getElementById('hour-val');
     let minVal = document.getElementById('min-val');
     let secVal = document.getElementById('sec-val');
     let ampmVal = document.getElementById('am-pm');
 
-    // console.log(`hour.val is, ${hourVal.value}`);
-    // console.log(hourVal.value != "" && minVal.value != "" && secVal.value != "" && ampmVal.value != "");
-    // console.log(hourVal.value != "");
-
     if (hourVal.value != "" && minVal.value != "" && secVal.value != "" && ampmVal.value != "") {
         let alarmSetValue = `${hourVal.value} : ${minVal.value} : ${secVal.value} ${ampmVal.value}`;
-        // `${setDigit(Number(hourVal.value))}:${setDigit(Number(minVal.value))}:${setDigit(Number(secVal.value))} ${ampmVal.value}`;
         if (alarmsList.indexOf(alarmSetValue) > -1) {
             alert("Alarm already set for the specified time");
         } else {
@@ -134,14 +131,14 @@ function deleteListElement(indexVal) {
     populateAlarmList(alarmsList);
 };
 
-//to keep track of the alarms set set by the user and alert the user
+//To keep track of the alarms set set by the user and alert the user
 setInterval(() => {
     const currentTime = timeFormat;
     if (alarmsList.indexOf(currentTime) > -1) {
 
-        alert("alarm on ");
+        alert(`Alarm on @ ${currentTime}`);
     }
 
 }, 1000);
 
-
+    
