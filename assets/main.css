@@ -9,7 +9,7 @@ body {
     padding: 10px;
     color:#5ed3bf;
     font-weight: bold;
-    font-size: 80px;
+    font-size: 4rem;
 }
 
 /* set the alignment of the form to set the alarm */
@@ -68,4 +68,8 @@ body {
     color: #29a1c6;
     font-weight: bold;
     font-size: 1rem;
+}
+
+p {
+    font-weight: bold;
 }

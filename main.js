@@ -1,6 +1,6 @@
 let timeFormat;
 
-//to display current time in the clock face
+//Display current time in the clock face
 setInterval(() => {
     const date = new Date();
     const hourVal = date.getHours();
@@ -21,11 +21,10 @@ setInterval(() => {
         am_pm = "AM";
     }
 
-    //To display the time in the required format
+    //Display the time in the required format
     timeFormat = setDigit(hours) + " : " + setDigit(minutes) + " : " + setDigit(seconds) + " " + am_pm;
     currentTime.textContent = timeFormat;
 }, 1000);
-
 
 //Adjust the digits to 2 if single digit is entered for value less than 10 and return as it is two digits are entered or value is greater than 10
 function setDigit(timeVal) {
@@ -34,7 +33,7 @@ function setDigit(timeVal) {
 }
 
 //Check the input values of hours,mins and seconds and set them to a value if value entered is greater than the max value
-//set to two digits if single digit is entered 
+//Set to two digits if single digit is entered 
 const hourIpCheck = document.getElementById('hour-val');
 const minIpCheck = document.getElementById('min-val');
 const secIpCheck = document.getElementById('sec-val');
@@ -48,14 +47,14 @@ hourIpCheck.addEventListener('blur', () => {
     } 
 });
 
-//Setting minute value to 00 if entered value is greater than 59 and set the digits to 2 upon blur
+//Setting minutes value to 00 if entered value is greater than 59 and set the digits to 2 upon blur
 minIpCheck.addEventListener('blur', () => {
     if (minIpCheck.value != "") {
         minIpCheck.value = setDigit(minIpCheck.value);
     } setMinSec(minIpCheck);
 });
 
-//Setting second value to 00 if entered value is greater than 59 and set the digits to 2 upon blur
+//Setting seconds value to 00 if entered value is greater than 59 and set the digits to 2 upon blur
 secIpCheck.addEventListener('blur', () => {
     if (secIpCheck.value != "") {
         secIpCheck.value = setDigit(secIpCheck.value);
@@ -68,7 +67,6 @@ function setMinSec(valCheck) {
         valCheck.value = "00";
     }
 }
-
 
 //Set the alarm, adds alarm to the list 
 let alarmsList = [];
@@ -120,25 +118,23 @@ function populateAlarmList(alarmsList) {
     }
 }
 
-//sort the list of alarms
+//Sort the list of alarms
 function sortList(alarmsList) {
     alarmsList.sort();
 }
 
-// delete the alarm selected by the user
+// Delete the alarm selected by the user
 function deleteListElement(indexVal) {
     alarmsList.splice(indexVal, 1);
     populateAlarmList(alarmsList);
 };
 
-//To keep track of the alarms set set by the user and alert the user
+//Keep track of the alarms set by the user and alert the user
 setInterval(() => {
     const currentTime = timeFormat;
     if (alarmsList.indexOf(currentTime) > -1) {
 
-        alert(`Alarm on @ ${currentTime}`);
+        alert(`Alarm turned on @  ${currentTime}`);
     }
 
 }, 1000);
-
-    
