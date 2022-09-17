@@ -42,7 +42,7 @@ const secIpCheck = document.getElementById('sec-val');
 hourIpCheck.addEventListener('blur', () => {
     if (hourIpCheck.value != "") {
         hourIpCheck.value = setDigit(hourIpCheck.value);
-    } if (Number(hourIpCheck.value > 12) || ((hourIpCheck.value != "") && Number(hourIpCheck.value == 0))) {
+    } if (Number(hourIpCheck.value > 12) || Number(hourIpCheck.value < 0) || ((hourIpCheck.value != "") && Number(hourIpCheck.value == 0))) {
         hourIpCheck.value = 12;
     } 
 });
@@ -63,7 +63,7 @@ secIpCheck.addEventListener('blur', () => {
 
 //Method to set the minute and seconds values
 function setMinSec(valCheck) {
-    if (Number(valCheck.value) > 59) {
+    if ((Number(valCheck.value) > 59) || (Number(valCheck.value < 0))) {
         valCheck.value = "00";
     }
 }
