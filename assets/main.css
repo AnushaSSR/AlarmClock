@@ -3,26 +3,25 @@ body{
     /* border: solid 3px #ff3300 ;
     border-color: #ff3300; */
     text-align: center;
+    overflow-x: hidden;
 }
 #clock-face {
     padding: 10px;
-color:#5ed3bf;
-font-weight: bold;
-font-size: 80px;
-
+    color:#5ed3bf;
+    font-weight: bold;
+    font-size: 80px;
 }
 
 #list-div {
     margin: 10px 130px;
     text-align: center;
-
 }
 
 #list-div p {
     margin-left: 300px;
     text-align: left;
-
 }
+
 #alarms-list {
     margin-left: 270px;
     margin-bottom: 100px;
@@ -31,32 +30,48 @@ font-size: 80px;
     text-align: left;
     float: left;
 }
+
 #alarms-list li span{
     margin: 10 10 10 0;
     width: 300px;
-
 }
 
 
 .list-element {
     margin-bottom: 10px;
-
 }
+
 .list-element span{
-    color: #5ed3bf;
+    color: #29a1c6;
     float: left;
+    font-weight: bold;
+    font-size: 1rem;
 }
 
 
 .deleteListElement {
     margin: 10px;
-    
     text-align: right;
 }
+
 #hours-val,#mins-val,#secs-val {
     text: #ff3300;
 }
 
 #set-alarm-form {
     padding: 20px; 
+    justify-content: center;
+}
+
+.col-sm-1 {
+    -ms-flex: 0 0 6%;
+    flex: 0 0 6%;
+    max-width: 6%;
+}
+.form-control {
+    margin: 0 5px;
+}
+
+.btn {
+    line-height: 0.5;
 }
