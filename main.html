@@ -2,15 +2,21 @@
 <html>
     <head>
         <title> My Alarm Clock</title>
+        <!-- favicon -->
+        <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico">
+        <!-- bootstrap -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="./assets/main.css">
+        <link rel="stylesheet" href="./assets/css/main.css">
     </head>
     <body>
+        <!-- Div: Page content -->
         <div id="content">
             <!-- Element to display the current time -->
             <div id="clock-face"></div>
+            <!-- Element to display the current time -->
             <!-- Element to display the heading -->
             <h1>Set Your Alarm</h1>
+            <!-- Element to display the heading -->
             <!-- Form element to set the alarm -->
             <form id="set-alarm-form" class="row">
                 <input
@@ -62,12 +68,19 @@
                     onclick="setAlarm()"
                 > Set Alarm</button>
             </form>
+            <!-- Form element to set the alarm -->
+            <!-- Div: Display alarms -->
             <div id="list-div">
                 <p>Alarms</p>
                 <!-- Unordered list to display the alarms -->
                 <ul id="alarms-list"></ul>
+                <!-- Unordered list to display the alarms -->
             </div>
+            <!-- Div: Display alarms -->
         </div>
-        <script type="text/javascript" src="main.js"></script>
+        <!-- Div: Page content -->
+        <!-- Script -->
+        <script type="text/javascript" src="./assets/js/main.js"></script>
+        <!-- Script -->
     </body>
 </html>
