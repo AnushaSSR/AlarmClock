@@ -1,7 +1,7 @@
 
 Add link ************************* 
 # Alarm Clock
-* Alerts the user for the alarm time set by them - Alarm Clock.
+* An utility app which alerts the user for the alarm time set by them - Alarm Clock.
 * Built with decent interface using Vanilla javascript, CSS, HTML and Bootstrap.
 
 # Features
