@@ -1,7 +1,8 @@
 /*set the body content and to control the overflow in x axis*/
 body {
     text-align: center;
-    overflow-x: hidden;
+    background-color: aliceblue;
+    
 }
 
 /* set the color and font of the clock face */
@@ -11,6 +12,7 @@ body {
     font-weight: bold;
     font-size: 3rem;
 }
+
 
 /* set the alignment of the form to set the alarm */
 #set-alarm-form {
@@ -73,3 +75,35 @@ body {
 p {
     font-weight: bold;
 }
+body {
+    overflow-x: hidden;
+}
+   
+/* @media screen and (max-width:300px) {
+    .col-sm-1 {
+        min-width: 30%;
+    }
+    
+} */
+/* 
+html {
+    font-size: 1rem;
+  }
+  
+  @include media-breakpoint-up(sm) {
+    html {
+      font-size: 1.2rem;
+    }
+  }
+  
+  @include media-breakpoint-up(md) {
+    html {
+      font-size: 1.4rem;
+    }
+  }
+  
+  @include media-breakpoint-up(lg) {
+    html {
+      font-size: 1.6rem;
+    }
+  } */
