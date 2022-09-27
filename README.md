@@ -1,8 +1,8 @@
-# AlarmClock
-An utility app which alerts the user for the times set by them(Alarm).
 
-# Technologies used 
-The app is build with a good interface using Vanilla javascript, CSS, HTML and Boostatrap.
+Add link ************************* 
+# Alarm Clock
+* This is one of the utility app which alerts the user for the alarm time set by them - Alarm Clock.
+* App is build with decent interface using Vanilla javascript, CSS, HTML and Bootstrap.
 
 # Features
 1. Displays the current time in 12 hour format HH:MM:SS AM/PM.
@@ -12,5 +12,5 @@ The app is build with a good interface using Vanilla javascript, CSS, HTML and B
 5. Allows the user to delete alarm/s added to the list.
 
 
-<a href="https://www.google.com/" target="_blank">Click here</a> to check out the app.
 
+<a href="https://www.google.com/" target="_blank">Click here</a> to see the app in action.
