@@ -11,4 +11,6 @@ Add link *************************
 4. Alerts the user when the current time equals to the set time in the list.
 5. Allows the user to delete alarm/s added to the list.
 
+![AlarmApp](https://user-images.githubusercontent.com/108065688/193254042-4e9af2be-dbe1-4a1d-ac1f-d8e81783cc48.gif)
+
 <a href="https://www.google.com/" target="_blank">Click here</a> to see the product.
