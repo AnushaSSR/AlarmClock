@@ -1,5 +1,3 @@
-
-Add link ************************* 
 # Alarm Clock
 * An utility app which alerts the user for the alarm time set by them - Alarm Clock.
 * Built with decent interface using Vanilla javascript, CSS, HTML and Bootstrap.
@@ -13,4 +11,4 @@ Add link *************************
 
 ![AlarmApp](https://user-images.githubusercontent.com/108065688/193254042-4e9af2be-dbe1-4a1d-ac1f-d8e81783cc48.gif)
 
-<a href="https://www.google.com/" target="_blank">Click here</a> to see the product.
+<a href="[https://www.google.com/](https://anushassr.github.io/AlarmClock/)" target="_blank">Click here</a> to see the product.
