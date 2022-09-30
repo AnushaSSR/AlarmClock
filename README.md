@@ -10,7 +10,7 @@
 5. Allows the user to delete alarm/s added to the list.
 
 # Glimpse of the Alarm clock:
-![AlarmApp (2)](https://user-images.githubusercontent.com/108065688/193256696-bc9a641f-6795-4ca5-8ff7-a5a92b8243d3.gif)
 
-#
+# ![AlarmApp (2)](https://user-images.githubusercontent.com/108065688/193263692-576d6955-d3b2-42c1-bea1-2065bfd0082b.gif)
+
 # <a href="https://anushassr.github.io/AlarmClock/" target="_blank">Click here</a> to see the alarm clock in action.
